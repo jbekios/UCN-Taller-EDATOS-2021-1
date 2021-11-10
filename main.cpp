@@ -17,11 +17,11 @@ int main( )
 {
     Mat image;
     Mat image_gray;
-    image = imread("caras.jpg", IMREAD_COLOR);
+    image = imread("data/caras.jpg", IMREAD_COLOR);
 
     CascadeClassifier face_cascade;
 
-    face_cascade.load( "haarcascade_frontalface_alt.xml" );
+    face_cascade.load( "classifiers/haarcascade_frontalface_alt.xml" );
 
     // Detect faces
     std::vector<Rect> faces;
