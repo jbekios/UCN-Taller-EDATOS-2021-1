@@ -8,36 +8,38 @@
 #include "opencv2/highgui.hpp"
 #include "opencv2/core.hpp"
 
-#include <stdio.h>
+#include "include/FaceDetector.hpp"
 
 using namespace std;
 using namespace cv;
 
 int main( )
 {
+    cout << "Pasé" << endl;
     Mat image;
-    Mat image_gray;
+
+
     image = imread("data/caras.jpg", IMREAD_COLOR);
 
-    CascadeClassifier face_cascade;
 
-    face_cascade.load( "classifiers/haarcascade_frontalface_alt.xml" );
+    FaceDetector fdetector;
 
-    // Detect faces
-    std::vector<Rect> faces;
-    cvtColor(image, image_gray, COLOR_BGR2GRAY);
-    equalizeHist(image_gray, image_gray);
-    face_cascade.detectMultiScale( image_gray, faces, 1.05, 4, 0|CASCADE_SCALE_IMAGE, Size(50, 50) );
+    auto markersFaces = fdetector.detectFaceRectangles(image);
 
-    for( int i = 0; i < faces.size(); i++ ){
-        Point center( faces[i].x + faces[i].width/2, faces[i].y + faces[i].height/2 );
-        //ellipse( image, center, Size( faces[i].width/2, faces[i].height/2), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
-        rectangle(image,Point (faces[i].x,faces[i].y),Point (faces[i].x+faces[i].width, faces[i].y+faces[i].height),Scalar(255,0,255),4,8,0);
+    Scalar color(0, 0, 255);
+    for(const auto &mf : markersFaces){
+        rectangle(image, mf, color, 4);
     }
 
+    // Mostrar la imagen con las marcas (rectángulos) indicando la posición de la cara
     imshow( "Detected Face", image );
+    cout << "Pasé2" << endl;
 
-    waitKey(0);
+    // Esperar hasta presionar la tecla ESC
+    if (waitKey(0) == 27);
+
+    destroyAllWindows();
+
     return 0;
 }
 
