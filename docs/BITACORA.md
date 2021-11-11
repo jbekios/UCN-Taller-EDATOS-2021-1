@@ -10,5 +10,8 @@
 | 09/NOV | OBJ-01 | Probar detector de caras | jbekios | 1 horas | 1 horas |
 | 10/NOV | OBJ-01 | Preparar código GIT (Arquitectura) | jbekios | 4 horas | 1.5 horas |
 | 10/NOV | OBJ-01 | Implementar la clase FaceDetect | jbekios | 2 horas | 2.5 horas |
+| 11/NOV | OBJ-01 | Implementar la clase ImageCoding | jbekios | 3 horas | 1.5 horas |
+| 11/NOV | OBJ-01 | Pruebas de distancia | jbekios | 0.3 horas | 0.3 horas |
+
 
 

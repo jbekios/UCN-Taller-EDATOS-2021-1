@@ -10,7 +10,6 @@
 
 FaceDetector::FaceDetector() : scaleFactor_(1.05), minNeighbors_(4),  imageWidth_(50), imageHeight_(50){
     face_cascade.load( "classifiers/haarcascade_frontalface_alt.xml" );
-
 }
 
 std::vector<cv::Rect> FaceDetector::detectFaceRectangles(const cv::Mat &frame) {

@@ -35,6 +35,6 @@ message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 link_directories(${OpenCV_LIB_DIR})
-add_executable(${PROJECT_NAME} main.cpp src/FaceDetector.cpp)
+add_executable(${PROJECT_NAME} main.cpp src/FaceDetector.cpp src/ImageCoding.cpp)
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 target_include_directories(${PROJECT_NAME} PRIVATE include)
