@@ -27,7 +27,6 @@ std::vector<Mat> ImageCoding::codeGray(std::vector<Rect> detections, bool equali
         if (equalize){
             equalizeHist(imageGray, imageGray);
         }
-        equalizeHist(imageGray, imageGray);
         // Reescalamos
         resize(imageGray, resizedDown, size, INTER_LINEAR);
         cropFaces.push_back(resizedDown.clone());

@@ -14,6 +14,7 @@ public:
 
     /**
      * Procesar imagen, convertirla en grises, es escalarla y ecualizarla (opcional)
+     *
      * @param frame (Mat) imagen fuente para detectar caras
      * @param detections (Vector<Rect>) Vector con los rectangulos de las detecciones
      * @param equalize (bool) True - ecualizo la imagen, en caso contrario no se ecualiza
@@ -33,7 +34,6 @@ private:
      * Imagen a ser procesada
      */
     Mat frame_;
-
 };
 
 #endif //IMAGE_CODING_HPP

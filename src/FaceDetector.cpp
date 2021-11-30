@@ -8,7 +8,7 @@
 #include "FaceDetector.hpp"
 
 
-FaceDetector::FaceDetector() : scaleFactor_(1.05), minNeighbors_(4),  imageWidth_(50), imageHeight_(50){
+FaceDetector::FaceDetector() : scaleFactor_(1.05), minNeighbors_(8),  imageWidth_(50), imageHeight_(50){
     face_cascade.load( "classifiers/haarcascade_frontalface_alt.xml" );
 }
 
